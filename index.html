@@ -1,0 +1,966 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>JAGALAH BUMI KITA, BUMI LESTARI — Kampanye Pelestarian Lingkungan</title>
+  
+  <!-- SEO & Social Meta Tags -->
+  <meta name="description" content="Kampanye pelestarian lingkungan: Mulai dari Langkah Kecil, Wujudkan Bumi yang Lestari. Kenali data timbulan sampah SIPSN 2024, aksi pengurangan plastik, hemat energi, dan checklist kebiasaan hijau.">
+  <meta name="keywords" content="Bumi Lestari, pelestarian lingkungan, SIPSN 2024, kelola sampah, daur ulang, hemat energi, tanam pohon, kampanye hijau">
+  <meta name="author" content="Tim Bumi Lestari">
+  <meta property="og:title" content="JAGALAH BUMI KITA, BUMI LESTARI">
+  <meta property="og:description" content="Mulai dari Langkah Kecil, Wujudkan Bumi yang Lestari. Pelajari 5 aksi hijau dan kenali fakta lingkungan resmi.">
+  <meta property="og:type" content="website">
+
+  <!-- Google Fonts: Bricolage Grotesque & Figtree & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Figtree:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap">
+
+  <!-- Core Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Top Reading Progress Indicator -->
+  <div class="scroll-progress-container" aria-hidden="true">
+    <div class="scroll-progress-bar" id="scrollProgressBar"></div>
+  </div>
+
+  <!-- Dynamic Interactive Eco Canvas Particle System (Morphing Ambient Field) -->
+  <canvas id="ecoParallaxCanvas" aria-hidden="true"></canvas>
+
+  <!-- Floating Minimalist Section Dots (Wix wh-1070 & Hitit inspired) -->
+  <nav class="floating-scroll-nav" id="floatingScrollNav" aria-label="Navigasi Halaman Parallax">
+    <a href="#beranda" class="scroll-dot is-active" data-section="beranda" aria-label="Beranda">
+      <span class="dot-circle"></span>
+      <span class="dot-label">01 Beranda</span>
+    </a>
+    <a href="#tentang" class="scroll-dot" data-section="tentang" aria-label="Tentang">
+      <span class="dot-circle"></span>
+      <span class="dot-label">02 Tentang</span>
+    </a>
+    <a href="#fakta" class="scroll-dot" data-section="fakta" aria-label="Fakta & Data">
+      <span class="dot-circle"></span>
+      <span class="dot-label">03 Fakta &amp; Data</span>
+    </a>
+    <a href="#aksi" class="scroll-dot" data-section="aksi" aria-label="5 Aksi Hijau">
+      <span class="dot-circle"></span>
+      <span class="dot-label">04 5 Aksi Hijau</span>
+    </a>
+    <a href="#tips" class="scroll-dot" data-section="tips" aria-label="Tips & Solusi">
+      <span class="dot-circle"></span>
+      <span class="dot-label">05 Tips &amp; Solusi</span>
+    </a>
+    <a href="#ajakan" class="scroll-dot" data-section="ajakan" aria-label="Mulai Aksi">
+      <span class="dot-circle"></span>
+      <span class="dot-label">06 Mulai Aksi</span>
+    </a>
+  </nav>
+
+  <!-- Header & Navigation -->
+  <header class="site-header" id="siteHeader" data-mobile-open="false">
+    <div class="container navbar">
+      <!-- Brand Logo -->
+      <a class="brand" href="#beranda" aria-label="Bumi Lestari - Kembali ke Beranda">
+        <svg class="brand-icon" viewBox="0 0 48 48" aria-hidden="true">
+          <circle cx="24" cy="24" r="22" fill="#2E6B3F"/>
+          <path d="M13 31c0-10 7-17 20-17 0 11-6 18-16 18-1.6 0-3-.3-4-1z" fill="#78A641"/>
+          <path d="M13 35c5-8 10-12 17-15" stroke="#F8F5E8" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+          <circle cx="35" cy="13" r="4.2" fill="#F4D35E"/>
+        </svg>
+        <span>BUMI LESTARI</span>
+      </a>
+
+      <!-- Desktop Nav & Mobile Drawer Container -->
+      <div class="nav-menu-wrapper" id="navMenuWrapper">
+        <nav aria-label="Navigasi Utama">
+          <ul class="nav-links">
+            <li><a class="nav-link is-active" href="#beranda">Beranda</a></li>
+            <li><a class="nav-link" href="#tentang">Tentang</a></li>
+            <li><a class="nav-link" href="#fakta">Fakta &amp; Data</a></li>
+            <li><a class="nav-link" href="#aksi">5 Aksi Hijau</a></li>
+            <li><a class="nav-link" href="#tips">Tips &amp; Solusi</a></li>
+            <li><a class="nav-cta-btn" href="#ajakan">Mulai Aksi</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <!-- Action Tools: Dark Theme Toggle & Mobile Menu Trigger -->
+      <div class="header-actions">
+        <button class="theme-toggle" id="themeToggle" type="button" aria-label="Ganti mode gelap atau terang" title="Ganti Mode">
+          <!-- Moon Icon (for Light Mode) -->
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+          <!-- Sun Icon (for Dark Mode) -->
+          <svg class="icon-sun" style="display:none;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+        </button>
+
+        <button class="menu-toggle" id="menuToggle" type="button" aria-label="Buka navigasi" aria-expanded="false" aria-controls="navMenuWrapper">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round">
+            <path d="M4 7h16M4 12h16M4 17h16"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ====================================================================
+         HERO SECTION: High Impact Editorial Layout with Real Photography
+         ==================================================================== -->
+    <section class="hero" id="beranda">
+      <!-- Parallax Environmental Backdrop Layer (Lush Sunlit Rainforest) -->
+      <div class="parallax-backdrop" aria-hidden="true">
+        <div class="parallax-img-layer" data-parallax-speed="0.22" style="background-image: url('https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1920&q=80');"></div>
+        <div class="parallax-overlay-blend hero-blend"></div>
+      </div>
+      <div class="container hero-grid">
+        <div class="hero-content reveal">
+          <span class="eyebrow">Kampanye Pelestarian Lingkungan</span>
+          <h1 class="hero-title">JAGALAH BUMI KITA, <span class="highlight">BUMI LESTARI</span></h1>
+          <p class="hero-lead">
+            Lingkungan hidup menyediakan air, udara, tanah, dan keanekaragaman hayati yang menopang peradaban. Masa depan bumi ditentukan oleh kesadaran kita hari ini dalam memilah sampah, menghemat energi, dan menjaga ekosistem.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#aksi">
+              Jelajahi 5 Aksi Hijau
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
+            </a>
+            <a class="btn btn-ghost" href="#fakta">Kenali Fakta Lingkungan</a>
+          </div>
+
+          <!-- Campaign Slogan Pill with gentle pulse -->
+          <div class="hero-slogan-pill">
+            <span class="pulse-dot" aria-hidden="true"></span>
+            <span>Mulai dari Langkah Kecil, Wujudkan Bumi yang Lestari.</span>
+          </div>
+
+          <!-- Quick Verified Highlights Under Hero -->
+          <div class="hero-quick-stats">
+            <div class="hero-stat-item">
+              <span class="hero-stat-num">34,2 Juta Ton</span>
+              <span class="hero-stat-lbl">Timbulan Sampah RI (SIPSN 2024)</span>
+            </div>
+            <div class="hero-stat-item">
+              <span class="hero-stat-num">59,74%</span>
+              <span class="hero-stat-lbl">Tercatat Terkelola</span>
+            </div>
+            <div class="hero-stat-item">
+              <span class="hero-stat-num">12 Langkah</span>
+              <span class="hero-stat-lbl">Kebiasaan Rumah &amp; Sekolah</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero Visual Showcase: Real Nature Photography + Floating Glassmorphic Badges -->
+        <div class="hero-visual-wrapper reveal delay-2">
+          <div class="hero-glow" aria-hidden="true"></div>
+
+          <!-- Floating Badge Top Right -->
+          <div class="floating-badge badge-top-right">
+            <div class="badge-icon-box green">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+              </svg>
+            </div>
+            <div class="badge-text-box">
+              <strong>5 Aksi Berkelanjutan</strong>
+              <span>Praktis &amp; Berdampak Nyata</span>
+            </div>
+          </div>
+
+          <!-- Main Hero Image Frame -->
+          <div class="hero-visual-card">
+            <img 
+              class="hero-image" 
+              src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=1000&q=80" 
+              alt="Hutan kanopi hijau dengan sinar matahari alami yang melambangkan kelestarian bumi"
+              loading="eager"
+              width="600"
+              height="700"
+            >
+          </div>
+
+          <!-- Floating Badge Bottom Left -->
+          <div class="floating-badge badge-bottom-left">
+            <div class="badge-icon-box blue">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/>
+              </svg>
+            </div>
+            <div class="badge-text-box">
+              <strong>Konservasi Air &amp; Laut</strong>
+              <span>Kurangi Polusi Plastik</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION: TENTANG (About & Core Philosophy)
+         ==================================================================== -->
+    <section class="about" id="tentang">
+      <!-- Parallax Environmental Backdrop Layer (Pristine River & Mountain Wilderness) -->
+      <div class="parallax-backdrop" aria-hidden="true">
+        <div class="parallax-img-layer" data-parallax-speed="0.18" style="background-image: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1920&q=80');"></div>
+        <div class="parallax-overlay-blend about-blend"></div>
+      </div>
+      <div class="container about-grid">
+        <div class="about-story reveal">
+          <span class="eyebrow">Tentang Kampanye</span>
+          <h2>Bumi Menyediakan, Kita yang Menjaga.</h2>
+          <p>
+            Lingkungan alam adalah rumah bersama yang menyediakan air bersih, udara segar, tanah subur, serta ekosistem pepohonan yang mendukung kelangsungan seluruh makhluk hidup. Namun, setiap sumber daya alam memiliki daya dukung yang terbatas.
+          </p>
+          <p>
+            Pengelolaan sampah yang bijak dan konsumsi sumber daya yang bertanggung jawab merupakan pilar utama pelestarian lingkungan hidup. Langkah besar berakar dari kebiasaan sederhana: memilah dari sumbernya, mengurangi barang sekali pakai, serta merawat pepohonan di sekitar kita.
+          </p>
+
+          <!-- Authentic Sample Photo: Mountain Stream & Forest -->
+          <div class="about-image-card">
+            <img 
+              class="about-image" 
+              src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=900&q=80" 
+              alt="Pemandangan sungai alami dan pegunungan hijau yang bersih"
+              loading="lazy"
+              width="800"
+              height="350"
+            >
+            <div class="about-image-overlay">
+              <span>Keberlanjutan adalah komitmen merawat apa yang menghidupi kita.</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3 Pillars List -->
+        <ul class="pillars-list reveal delay-2">
+          <li class="pillar-item">
+            <span class="pillar-icon" style="background:var(--c-water); color:#103942;">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/>
+              </svg>
+            </span>
+            <div class="pillar-content">
+              <strong>Gunakan Secukupnya</strong>
+              <p>Hemat pemakaian air bersih, matikan listrik saat tidak digunakan, dan cegah pemborosan sumber daya energi setiap hari.</p>
+            </div>
+          </li>
+
+          <li class="pillar-item">
+            <span class="pillar-icon" style="background:var(--c-sun); color:#382E06;">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M3 6h18M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/>
+                <line x1="10" y1="11" x2="10" y2="17"/>
+                <line x1="14" y1="11" x2="14" y2="17"/>
+              </svg>
+            </span>
+            <div class="pillar-content">
+              <strong>Kelola Sampah Secara Bijak</strong>
+              <p>Pilah sampah sejak dari wadah pertama, maksimalkan potensi daur ulang, dan jangan pernah membuang sampah ke sungai maupun saluran air.</p>
+            </div>
+          </li>
+
+          <li class="pillar-item">
+            <span class="pillar-icon" style="background:var(--c-leaf); color:#17341B;">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M12 10a6 6 0 0 0-6-6c0 7 6 12 6 12s6-5 6-12a6 6 0 0 0-6 6Z"/>
+                <path d="M12 22V12"/>
+              </svg>
+            </span>
+            <div class="pillar-content">
+              <strong>Rawat Lingkungan Sekitar</strong>
+              <p>Dukung penghijauan lingkungan, rawat tanaman di pekarangan sekolah dan rumah, serta ciptakan ruang terbuka hijau yang asri.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION: FAKTA & DATA (Verified Data Cards & Official Sources)
+         ==================================================================== -->
+    <div class="band-wrapper">
+      <!-- Parallax Environmental Backdrop Layer (Aerial Emerald Forest Canopy & Atmosphere) -->
+      <div class="parallax-backdrop" aria-hidden="true">
+        <div class="parallax-img-layer" data-parallax-speed="0.2" style="background-image: url('https://images.unsplash.com/photo-1511497584788-87676104235f?auto=format&fit=crop&w=1920&q=80');"></div>
+        <div class="parallax-overlay-blend facts-blend"></div>
+      </div>
+      <section class="facts" id="fakta">
+        <div class="container">
+          <div class="section-head reveal">
+            <span class="eyebrow">Fakta &amp; Data Resmi</span>
+            <h2>Angka Nyata untuk Menyadarkan Kita</h2>
+            <p>
+              Informasi di bawah ini disajikan berdasarkan rilis data resmi terverifikasi lengkap dengan sumber, cakupan, dan konteks ilmiah. Estimasi global disajikan terpisah dari data nasional Indonesia.
+            </p>
+          </div>
+
+          <div class="facts-grid">
+            <!-- Fact 1: SIPSN 2024 Indonesia (Wide Card with Stack Progress Bar) -->
+            <article class="fact-card wide reveal">
+              <div>
+                <span class="badge-tag badge-green">SIPSN · Data 2024 · Indonesia</span>
+                <div class="fact-big-stat" style="margin-top:0.85rem;">
+                  <span id="countTimbulan">34.214.607,36</span>
+                  <small>Ton timbulan sampah tercatat per tahun</small>
+                </div>
+                <dl class="fact-meta">
+                  <div>
+                    <dt>Sumber Resmi</dt>
+                    <dd>Sistem Informasi Pengelolaan Sampah Nasional (SIPSN), Kementerian Lingkungan Hidup.</dd>
+                  </div>
+                  <div>
+                    <dt>Cakupan Wilayah</dt>
+                    <dd>Data dihimpun dari 317 kabupaten/kota yang telah melaporkan secara resmi, bukan seluruh kabupaten/kota di Indonesia.</dd>
+                  </div>
+                  <div>
+                    <dt>Konteks Angka</dt>
+                    <dd>Angka timbulan sampah tahun 2024 sebagaimana tercatat dan diverifikasi dalam sistem SIPSN.</dd>
+                  </div>
+                </dl>
+              </div>
+
+              <div>
+                <h3 style="font-size:1.45rem; margin-bottom:0.75rem;">Proporsi Pengelolaan Sampah</h3>
+                <p style="font-size:0.95rem; color:var(--text-muted); margin-bottom:1rem;">
+                  Persentase pengelolaan dari total timbulan sampah pada kabupaten/kota pelapor:
+                </p>
+                <div class="progress-stack" role="img" aria-label="59,74 persen sampah tercatat terkelola dan 40,26 persen belum terkelola">
+                  <div class="progress-segment managed" style="width:0%;"></div>
+                  <div class="progress-segment unmanaged" style="width:0%;"></div>
+                </div>
+                <div class="stack-legend">
+                  <div class="stack-legend-item managed">
+                    <b id="countManaged">59,74%</b>
+                    <span>Tercatat Terkelola</span>
+                  </div>
+                  <div class="stack-legend-item unmanaged">
+                    <b id="countUnmanaged">40,26%</b>
+                    <span>Belum Terkelola</span>
+                  </div>
+                </div>
+                <p style="font-size:0.85rem; color:var(--text-muted); margin-top:1.1rem; line-height:1.5;">
+                  Tantangan sebesar 40,26% timbulan yang belum terkelola memerlukan partisipasi pemilahan dari rumah tangga dan fasilitas daur ulang masyarakat.
+                </p>
+              </div>
+            </article>
+
+            <!-- Fact 2: UNEP Global Estimates -->
+            <article class="fact-card reveal delay-1">
+              <span class="badge-tag badge-blue">UNEP · Estimasi Global</span>
+              <div class="fact-big-stat">
+                19–23 Juta
+                <small>Ton sampah plastik masuk ke perairan per tahun</small>
+              </div>
+              <div>
+                <div class="range-scale" role="img" aria-label="Rentang 19 hingga 23 juta ton pada skala 0 hingga 25">
+                  <div class="range-scale-fill"></div>
+                </div>
+                <div class="range-ticks" aria-hidden="true">
+                  <span>0</span><span>5</span><span>10</span><span>15</span><span>20</span><span>25 Juta</span>
+                </div>
+              </div>
+              <dl class="fact-meta">
+                <div>
+                  <dt>Sumber Resmi</dt>
+                  <dd>UNEP (United Nations Environment Programme) — Plastic Pollution and Marine Litter.</dd>
+                </div>
+                <div>
+                  <dt>Cakupan Data</dt>
+                  <dd>Estimasi seluruh dunia (global), bukan data khusus Indonesia.</dd>
+                </div>
+                <div>
+                  <dt>Konteks Dampak</dt>
+                  <dd>Sampah plastik yang mencemari ekosistem perairan seperti danau, sungai, pesisir, dan laut lepas.</dd>
+                </div>
+              </dl>
+            </article>
+
+            <!-- Fact 3: WHO Impact on Health -->
+            <article class="fact-card reveal delay-2">
+              <span class="badge-tag badge-sun">WHO · Kesehatan &amp; Lingkungan</span>
+              <h3 style="font-size:1.4rem;">Pengelolaan Limbah yang Tidak Tepat Mengancam Kesehatan</h3>
+              <p style="font-size:0.95rem; color:var(--text-muted); line-height:1.55;">
+                Sampah dan limbah yang tidak ditangani dengan tepat dapat mencemari air minum, mencemari tanah, menghasilkan polusi udara akibat pembakaran terbuka, serta menjadi sarang vektor penyakit.
+              </p>
+              <dl class="fact-meta">
+                <div>
+                  <dt>Sumber Resmi</dt>
+                  <dd>World Health Organization (WHO) — Lembar Fakta Health-care Waste.</dd>
+                </div>
+                <div>
+                  <dt>Cakupan Data</dt>
+                  <dd>Limbah fasilitas kesehatan dan pengelolaan sampah berdampak luas pada kesehatan masyarakat.</dd>
+                </div>
+                <div>
+                  <dt>Konteks Penting</dt>
+                  <dd>Pemilahan yang aman dan pengolahan higienis melindungi pekerja kebersihan dan kualitas hidup warga.</dd>
+                </div>
+              </dl>
+            </article>
+
+            <!-- Fact 4: FAO Urban Forestry -->
+            <article class="fact-card reveal delay-3">
+              <span class="badge-tag badge-green">FAO · Pepohonan Kota</span>
+              <h3 style="font-size:1.4rem;">Pepohonan Menjaga Iklim Kota Tetap Sejuk &amp; Lestari</h3>
+              <p style="font-size:0.95rem; color:var(--text-muted); line-height:1.55;">
+                Pohon perkotaan menyerap polutan udara, memberikan keteduhan alami, meredam gelombang panas perkotaan (heat island), dan menjadi habitat bagi keanekaragaman hayati.
+              </p>
+              <dl class="fact-meta">
+                <div>
+                  <dt>Sumber Resmi</dt>
+                  <dd>Food and Agriculture Organization (FAO) — Urban trees: more than just a pretty face.</dd>
+                </div>
+                <div>
+                  <dt>Cakupan Data</dt>
+                  <dd>Manfaat vegetasi perkotaan dan ruang terbuka hijau global.</dd>
+                </div>
+                <div>
+                  <dt>Konteks Peran</dt>
+                  <dd>Menurunkan suhu lingkungan perkotaan secara signifikan sekaligus menyerap gas rumah kaca.</dd>
+                </div>
+              </dl>
+            </article>
+          </div>
+
+          <!-- Data Citation Disclaimer -->
+          <div class="facts-disclaimer reveal">
+            <strong>Catatan Transparansi Data:</strong> SIPSN diperbarui secara berkala oleh Kementerian Lingkungan Hidup. Silakan kunjungi tautan resmi di bagian <em>Sumber Informasi</em> untuk memverifikasi data terbaru dan laporan komprehensif.
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- ====================================================================
+         SECTION: 5 AKSI HIJAU (Action Cards with High-Res Sample Photos)
+         ==================================================================== -->
+    <section class="actions" id="aksi">
+      <!-- Parallax Environmental Backdrop Layer (Vibrant Dew-Kissed Leaves & Bio Growth) -->
+      <div class="parallax-backdrop" aria-hidden="true">
+        <div class="parallax-img-layer" data-parallax-speed="0.18" style="background-image: url('https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?auto=format&fit=crop&w=1920&q=80');"></div>
+        <div class="parallax-overlay-blend aksi-blend"></div>
+      </div>
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">5 Aksi Hijau Berkelanjutan</span>
+          <h2>Lima Langkah Praktis yang Bisa Dimulai Hari Ini</h2>
+          <p>
+            Perubahan besar lahir dari konsistensi tindakan kecil. Pilih salah satu aksi, jadikan kebiasaan sehari-hari, lalu ajak keluarga dan teman untuk ikut melaksanakannya.
+          </p>
+        </div>
+
+        <div class="action-grid">
+          <!-- Card 1: Daur Ulang -->
+          <article class="action-card reveal delay-1">
+            <div class="action-image-box">
+              <img 
+                class="action-img" 
+                src="https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?auto=format&fit=crop&w=700&q=80" 
+                alt="Pilah sampah daur ulang botol kaca dan kertas"
+                loading="lazy"
+                width="600"
+                height="400"
+              >
+              <span class="action-icon-pill" title="Daur Ulang">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M7 19H4.815a1.83 1.83 0 0 1-1.57-.881 1.785 1.785 0 0 1-.004-1.784L7.196 9.5"/>
+                  <path d="M11 19h8.2a1.8 1.8 0 0 0 1.57-.88 1.79 1.79 0 0 0 .004-1.78L17.2 9.5"/>
+                  <path d="m11 5 3.5 6H8.5L12 5Z"/>
+                </svg>
+              </span>
+            </div>
+            <div class="action-body">
+              <span class="badge-tag badge-green">Aksi 01</span>
+              <h3>Daur Ulang</h3>
+              <p>Pilah sampah berdasarkan kategorinya (organik, anorganik, dan residu) dan manfaatkan fasilitas bank sampah atau daur ulang terdekat.</p>
+              <div class="action-tip">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
+                <span>Mulai dari 2 wadah terpisah di rumah</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 2: Hemat Energi -->
+          <article class="action-card reveal delay-2">
+            <div class="action-image-box">
+              <img 
+                class="action-img" 
+                src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&w=700&q=80" 
+                alt="Lampu hemat energi yang menyala hangat"
+                loading="lazy"
+                width="600"
+                height="400"
+              >
+              <span class="action-icon-pill" title="Hemat Energi">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M9 18h6"/>
+                  <path d="M10 22h4"/>
+                  <path d="M15.09 14c.18-.98.65-1.74 1.41-2.5A4.65 4.65 0 0 0 18 8 6 6 0 0 0 6 8c0 1 .23 2.23 1.5 3.5A4.61 4.61 0 0 1 8.91 14"/>
+                </svg>
+              </span>
+            </div>
+            <div class="action-body">
+              <span class="badge-tag badge-sun">Aksi 02</span>
+              <h3>Hemat Energi</h3>
+              <p>Matikan lampu, pendingin ruangan, dan cabut pengisi daya perangkat elektronik saat tidak digunakan untuk menekan emisi karbon.</p>
+              <div class="action-tip">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
+                <span>Cek saklar sebelum meninggalkan ruangan</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 3: Kurangi Plastik -->
+          <article class="action-card reveal delay-3">
+            <div class="action-image-box">
+              <img 
+                class="action-img" 
+                src="https://images.unsplash.com/photo-1602143407151-7111542de6e8?auto=format&fit=crop&w=700&q=80" 
+                alt="Botol minum pakai ulang dan tas belanja ramah lingkungan"
+                loading="lazy"
+                width="600"
+                height="400"
+              >
+              <span class="action-icon-pill" title="Kurangi Plastik">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/>
+                  <path d="M3 6h18"/>
+                  <path d="M16 10a4 4 0 0 1-8 0"/>
+                </svg>
+              </span>
+            </div>
+            <div class="action-body">
+              <span class="badge-tag badge-blue">Aksi 03</span>
+              <h3>Kurangi Plastik</h3>
+              <p>Gunakan tumbler isi ulang, wadah makan tahan lama, dan tas belanja kain untuk menghentikan ketergantungan plastik sekali pakai.</p>
+              <div class="action-tip">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
+                <span>Selalu simpan tas lipat di dalam ransel</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 4: Menanam Pohon -->
+          <article class="action-card reveal delay-1">
+            <div class="action-image-box">
+              <img 
+                class="action-img" 
+                src="https://images.unsplash.com/photo-1576085898323-218337e3e43c?auto=format&fit=crop&w=700&q=80" 
+                alt="Tangan menanam bibit pohon hijau di tanah yang subur"
+                loading="lazy"
+                width="600"
+                height="400"
+              >
+              <span class="action-icon-pill" title="Menanam Pohon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M12 19V5"/>
+                  <path d="M7 10a5 5 0 0 1 10 0c0 4-5 9-5 9s-5-5-5-9Z"/>
+                </svg>
+              </span>
+            </div>
+            <div class="action-body">
+              <span class="badge-tag badge-green">Aksi 04</span>
+              <h3>Menanam Pohon</h3>
+              <p>Pilih tanaman atau pohon peneduh yang cocok dengan jenis tanah dan iklim setempat, lalu rawat dengan penyiraman serta pemupukan rutin.</p>
+              <div class="action-tip">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
+                <span>Tanam, siram, dan pantau pertumbuhannya</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 5: Buang Sampah pada Tempatnya -->
+          <article class="action-card reveal delay-2">
+            <div class="action-image-box">
+              <img 
+                class="action-img" 
+                src="https://images.unsplash.com/photo-1611284446314-60a58ac0deb9?auto=format&fit=crop&w=700&q=80" 
+                alt="Taman asri bersih tanpa sampah yang mencemari"
+                loading="lazy"
+                width="600"
+                height="400"
+              >
+              <span class="action-icon-pill" title="Buang Sampah pada Tempatnya">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"/>
+                  <path d="M3 6h18"/>
+                  <path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/>
+                </svg>
+              </span>
+            </div>
+            <div class="action-body">
+              <span class="badge-tag badge-sun">Aksi 05</span>
+              <h3>Buang Sampah pada Tempatnya</h3>
+              <p>Hindari membuang sampah sembarangan ke jalan, selokan, parit, dan sungai. Jika belum menemukan tempat sampah, simpan dahulu di saku atau tas.</p>
+              <div class="action-tip">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
+                <span>Bawa kantong kecil untuk sampah sementara</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION: TIPS & SOLUSI (Interactive Checklist with Gamification)
+         ==================================================================== -->
+    <div class="band-wrapper">
+      <!-- Parallax Environmental Backdrop Layer (Rolling Green Hills & Renewable Energy) -->
+      <div class="parallax-backdrop" aria-hidden="true">
+        <div class="parallax-img-layer" data-parallax-speed="0.2" style="background-image: url('https://images.unsplash.com/photo-1466611653911-95081537e5b7?auto=format&fit=crop&w=1920&q=80');"></div>
+        <div class="parallax-overlay-blend tips-blend"></div>
+      </div>
+      <section class="tips-section" id="tips">
+        <div class="container">
+          <div class="tips-header-wrap reveal">
+            <div class="section-head" style="margin-bottom:0;">
+              <span class="eyebrow">Tips dan Solusi Interaktif</span>
+              <h2>Checklist Kebiasaan Ramah Lingkungan</h2>
+              <p>
+                Centang setiap kebiasaan yang sudah kamu terapkan di rumah dan sekolah. Progres tersimpan otomatis di perangkatmu.
+              </p>
+            </div>
+
+            <!-- Interactive Progress Widget -->
+            <div class="tips-progress-widget" aria-live="polite">
+              <div class="widget-top-row">
+                <span>Capaian Kebiasaan Hijau</span>
+                <output id="checklistCount">0 dari 12</output>
+              </div>
+              <div class="progress-meter" role="progressbar" aria-valuemin="0" aria-valuemax="12" aria-valuenow="0" id="checklistMeter">
+                <div class="progress-fill" id="checklistFill"></div>
+              </div>
+              <p class="widget-msg" id="checklistMsg">Mulai dari satu langkah kecil hari ini.</p>
+            </div>
+          </div>
+
+          <!-- Filter Tabs for Habit Checklist -->
+          <div class="checklist-filter-bar reveal">
+            <button class="filter-btn is-active" type="button" data-filter="all">Semua Kebiasaan (12)</button>
+            <button class="filter-btn" type="button" data-filter="home">Di Rumah (6)</button>
+            <button class="filter-btn" type="button" data-filter="school">Di Sekolah (6)</button>
+            <button class="filter-btn" type="button" data-filter="pending">Belum Selesai</button>
+          </div>
+
+          <!-- Checklist Cards Columns -->
+          <div class="checklist-columns">
+            <!-- Home Checklist Card -->
+            <div class="checklist-card reveal delay-1" data-type="home">
+              <div class="checklist-card-head">
+                <svg style="background:var(--c-leaf); stroke:#17341B;" viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                  <polyline points="9 22 9 12 15 12 15 22"/>
+                </svg>
+                <h3>Kebiasaan di Rumah</h3>
+              </div>
+              <ul class="check-items-list">
+                <li>
+                  <label class="check-item-label">
+                    <input type="checkbox" data-k="r1">
+                    <span>Memilah sampah organik dan anorganik di dapur</span>
+                  </label>
+                </li>
+                <li>
+                  <label class="check-item-label">
+                    <input type="checkbox" data-k="r2">
+                    <span>Membawa botol minum (tumbler) sendiri saat bepergian</span>
+                  </label>
+                </li>
+                <li>
+                  <label class="check-item-label">
+                    <input type="checkbox" data-k="r3">
+                    <span>Mematikan lampu dan perangkat elektronik saat tidak dipakai</span>
+                  </label>
+                </li>
+                <li>
+                  <label class="check-item-label">
+                    <input type="checkbox" data-k="r4">
+                    <span>Menggunakan tas belanja kain pakai ulang ke pasar atau minimarket</span>
+                  </label>
+                </li>
+                <li>
+                  <label class="check-item-label">
+                    <input type="checkbox" data-k="r5">
+                    <span>Menanam dan merawat tanaman di pot atau pekarangan rumah</span>
+                  </label>
+                </li>
+                <li>
+                  <label class="check-item-label">
+                    <input type="checkbox" data-k="r6">
+                    <span>Membuang sampah pada tempat sampah tertutup, bukan ke selokan</span>
+                  </label>
+                </li>
+              </ul>
+            </div>
+
+            <!-- School Checklist Card -->
+            <div class="checklist-card reveal delay-2" data-type="school">
+              <div class="checklist-card-head">
+                <svg style="background:var(--c-sun); stroke:#3B3004;" viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
+                  <path d="M6 12v5c3 3 9 3 12 0v-5"/>
+                </svg>
+                <h3>Kebiasaan di Sekolah</h3>
+              </div>
+              <ul class="check-items-list">
+                <li>
+                  <label class="check-item-label">
+                    <input type="checkbox" data-k="s1">
+                    <span>Membawa tumbler dan kotak bekal makan sendiri ke sekolah</span>
+                  </label>
+                </li>
+                <li>
+                  <label class="check-item-label">
+                    <input type="checkbox" data-k="s2">
+                    <span>Memilah sampah di tempat sampah kelas dan area kantin</span>
+                  </label>
+                </li>
+                <li>
+                  <label class="check-item-label">
+                    <input type="checkbox" data-k="s3">
+                    <span>Mematikan lampu kelas dan kipas angin saat ruangan kosong</span>
+                  </label>
+                </li>
+                <li>
+                  <label class="check-item-label">
+                    <input type="checkbox" data-k="s4">
+                    <span>Memanfaatkan kertas bekas dua sisi dan buku catatan sampai habis</span>
+                  </label>
+                </li>
+                <li>
+                  <label class="check-item-label">
+                    <input type="checkbox" data-k="s5">
+                    <span>Aktif merawat tanaman dan kebersihan taman sekolah</span>
+                  </label>
+                </li>
+                <li>
+                  <label class="check-item-label">
+                    <input type="checkbox" data-k="s6">
+                    <span>Mengajak dan mengingatkan teman untuk tidak membuang sampah sembarangan</span>
+                  </label>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="checklist-actions reveal">
+            <button class="btn btn-ghost" type="button" id="resetChecklistBtn">Mulai dari Awal</button>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- ====================================================================
+         SECTION: AJAKAN BERTINDAK (Call to Action & Interactive Pledge)
+         ==================================================================== -->
+    <section class="cta-section" id="ajakan">
+      <!-- Parallax Environmental Backdrop Layer (Golden Hour Dawn Over Misty Green Hills) -->
+      <div class="parallax-backdrop" aria-hidden="true">
+        <div class="parallax-img-layer" data-parallax-speed="0.24" style="background-image: url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1920&q=80');"></div>
+        <div class="parallax-overlay-blend cta-blend"></div>
+      </div>
+      <div class="container">
+        <div class="cta-box-card reveal">
+          <div class="cta-ambient-circle" aria-hidden="true"></div>
+
+          <div>
+            <h2>Masa Depan Bumi Dimulai dari Kita</h2>
+            <p>
+              Setiap botol pakai ulang yang kamu isi, setiap sampah yang dipilah dari rumah, dan setiap pohon yang kamu rawat adalah investasi kelangsungan hidup bumi kita. Ambil komitmen pertamamu sekarang.
+            </p>
+            <a class="btn btn-sun" href="#tips" style="margin-right:0.75rem; margin-bottom:0.75rem;">
+              Saya Siap Menjaga Bumi
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M5 12h14M13 6l6 6-6 6"/>
+              </svg>
+            </a>
+          </div>
+
+          <!-- Interactive Digital Pledge Card -->
+          <div class="pledge-card-interactive">
+            <h3>
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              Ikrar Komitmen Hijau
+            </h3>
+            <p style="font-size:0.9rem; color:#E3EBD3;">
+              Sudah ada <strong id="pledgeCountDisplay" style="color:var(--c-sun)">1.428</strong> komitmen warga yang menjaga bumi.
+            </p>
+
+            <form id="pledgeForm">
+              <input class="pledge-input" type="text" id="pledgeName" placeholder="Tuliskan nama Anda..." required>
+              <select class="pledge-select" id="pledgeAction" style="margin-top:0.75rem;">
+                <option value="Selalu membawa tumbler dan botol minum sendiri">Selalu membawa tumbler &amp; botol minum</option>
+                <option value="Memilah sampah organik dan anorganik dari rumah">Memilah sampah organik &amp; anorganik</option>
+                <option value="Menghemat listrik dan mematikan lampu saat keluar ruangan">Menghemat listrik &amp; mematikan perangkat</option>
+                <option value="Menanam dan merawat pohon di pekarangan">Menanam &amp; merawat tanaman hijau</option>
+                <option value="Menolak kantong plastik sekali pakai saat berbelanja">Menolak kantong plastik sekali pakai</option>
+              </select>
+
+              <button class="btn btn-sun" type="submit" style="width:100%; margin-top:1rem; min-height:2.9rem;">
+                Buat Ikrar Saya
+              </button>
+            </form>
+
+            <!-- Result Digital Certificate Preview -->
+            <div class="pledge-result-banner" id="pledgeResult">
+              <strong style="color:var(--c-sun); display:block; font-size:1.05rem; margin-bottom:0.25rem;">
+                🌱 Sahabat Bumi Lestari Terdaftar!
+              </strong>
+              <p style="margin-bottom:0.35rem;">
+                Nama: <strong id="pledgeCertificateName" style="color:#fff;">-</strong>
+              </p>
+              <p style="margin-bottom:0.35rem;">
+                Komitmen: <em id="pledgeCertificateAction" style="color:#F4D35E;">-</em>
+              </p>
+              <p style="font-size:0.8rem; color:#A4BBA6;">
+                Diresmikan pada: <span id="pledgeCertificateDate">-</span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION: SUMBER INFORMASI (Verified External Official Links)
+         ==================================================================== -->
+    <section class="sources-section" id="sumber">
+      <!-- Parallax Environmental Backdrop Layer (Sunlit Pine Woodland Canopy) -->
+      <div class="parallax-backdrop" aria-hidden="true">
+        <div class="parallax-img-layer" data-parallax-speed="0.16" style="background-image: url('https://images.unsplash.com/photo-1473448912268-2022ce9509d8?auto=format&fit=crop&w=1920&q=80');"></div>
+        <div class="parallax-overlay-blend sumber-blend"></div>
+      </div>
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Transparansi Data</span>
+          <h2>Sumber Informasi Resmi</h2>
+          <p>
+            Seluruh data, angka statistik, dan panduan lingkungan pada landing page ini merujuk langsung ke publikasi otoritas resmi. Anda dapat mengonfirmasi data melalui tautan berikut:
+          </p>
+        </div>
+
+        <div class="sources-grid">
+          <!-- SIPSN KLHK -->
+          <a class="source-item-card reveal delay-1" href="https://sampahnasional.kemenlh.go.id/" target="_blank" rel="noopener noreferrer">
+            <div>
+              <b>SIPSN — KLHK</b>
+              <span class="source-desc">Sistem Informasi Pengelolaan Sampah Nasional, Kementerian Lingkungan Hidup Republik Indonesia. Sumber data timbulan sampah 2024 dan rasio pengelolaan kabupaten/kota.</span>
+            </div>
+            <div class="source-icon-badge" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M7 17L17 7M8 7h9v9"/>
+              </svg>
+            </div>
+          </a>
+
+          <!-- UNEP -->
+          <a class="source-item-card reveal delay-2" href="https://www.unep.org/topics/ocean-seas-and-coasts/ecosystem-degradation-pollution/plastic-pollution-and-marine-litter" target="_blank" rel="noopener noreferrer">
+            <div>
+              <b>UNEP — PBB</b>
+              <span class="source-desc">United Nations Environment Programme. Publikasi resmi Plastic Pollution and Marine Litter mengenai estimasi global sampah plastik di ekosistem perairan dunia.</span>
+            </div>
+            <div class="source-icon-badge" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M7 17L17 7M8 7h9v9"/>
+              </svg>
+            </div>
+          </a>
+
+          <!-- WHO -->
+          <a class="source-item-card reveal delay-3" href="https://www.who.int/news-room/fact-sheets/detail/health-care-waste" target="_blank" rel="noopener noreferrer">
+            <div>
+              <b>WHO — Organisasi Kesehatan Dunia</b>
+              <span class="source-desc">World Health Organization lembar fakta Health-care Waste, mengulas bahaya sistemik pengelolaan sampah yang tidak tepat terhadap kualitas air, udara, dan kesehatan manusia.</span>
+            </div>
+            <div class="source-icon-badge" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M7 17L17 7M8 7h9v9"/>
+              </svg>
+            </div>
+          </a>
+
+          <!-- FAO -->
+          <a class="source-item-card reveal delay-4" href="https://www.fao.org/newsroom/story/Urban-trees-more-than-just-a-pretty-face/en" target="_blank" rel="noopener noreferrer">
+            <div>
+              <b>FAO — Organisasi Pangan &amp; Pertanian</b>
+              <span class="source-desc">Food and Agriculture Organization artikel Urban trees: more than just a pretty face, mengenai peran strategis pepohonan dalam mitigasi panas ekstrem dan biodiversitas kota.</span>
+            </div>
+            <div class="source-icon-badge" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M7 17L17 7M8 7h9v9"/>
+              </svg>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ====================================================================
+       FOOTER (Team Credentials, Slogan, and Links)
+       ==================================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand-col">
+          <a class="brand" href="#beranda" aria-label="Bumi Lestari, kembali ke atas">
+            <svg class="brand-icon" viewBox="0 0 48 48" aria-hidden="true">
+              <circle cx="24" cy="24" r="22" fill="#2E6B3F"/>
+              <path d="M13 31c0-10 7-17 20-17 0 11-6 18-16 18-1.6 0-3-.3-4-1z" fill="#78A641"/>
+              <path d="M13 35c5-8 10-12 17-15" stroke="#F8F5E8" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+              <circle cx="35" cy="13" r="4.2" fill="#F4D35E"/>
+            </svg>
+            <span>BUMI LESTARI</span>
+          </a>
+          <p class="footer-slogan">
+            Mulai dari Langkah Kecil, Wujudkan Bumi yang Lestari.
+          </p>
+        </div>
+
+        <div class="footer-team-col">
+          <h3>Kampanye Disusun Oleh:</h3>
+          <p class="footer-group-name">[NAMA KELOMPOK]</p>
+          <ul class="members-tag-list" aria-label="Daftar Anggota Kelompok">
+            <li class="member-pill">Safwan</li>
+            <li class="member-pill">Rizqo</li>
+            <li class="member-pill">Queena</li>
+            <li class="member-pill">Nadinda</li>
+            <li class="member-pill">Keyza</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom-bar">
+        <span>&copy; Kampanye Pelestarian Lingkungan Hidup: <strong>JAGALAH BUMI KITA, BUMI LESTARI</strong>.</span>
+        <button class="back-to-top-btn" id="backToTopBtn" type="button">
+          Kembali ke atas
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 15l-6-6-6 6"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Interactive JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,12 @@
+{
+  "name": "bumi-lestari-landing-page",
+  "version": "1.0.0",
+  "description": "Landing Page Kampanye Pelestarian Lingkungan - JAGALAH BUMI KITA, BUMI LESTARI",
+  "scripts": {
+    "dev": "npx live-server --port=3000 --watch=.",
+    "start": "python3 -m http.server 3000"
+  },
+  "keywords": ["bumi-lestari", "landing-page", "environment", "wix-inspired"],
+  "author": "Tim Bumi Lestari",
+  "license": "MIT"
+}
